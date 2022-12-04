@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* universal selector */
+     /*   * {
+            padding: 0;
+            background-color: rgb(145, 145, 143);
+        }/* 
+
+      /*    individual selector */
+       /* p {
+            background-color: rgb(124, 28, 214);
+        } */
+
+        /*class and id selector */
+         .danger {
+            background-color: brown;
+            color: white;
+        } 
+
+         #unique {
+            background-color: blueviolet;
+            color: white;
+        } 
+
+        /* and selector (chained)*/
+        /* li.bg-color.text-white{
+            color: brown;
+            background-color: black;
+        } */
+
+        /* combined selector */
+        /* p, ul{
+            background-color: coral;
+            color: white;
+        }  */
+
+        /* inside an element */
+        /* div ul li{
+            background-color: rgb(174, 118, 226);
+        } */
+        /* direct child  */
+        /* div > p{
+            background-color: rgb(101, 20, 177);
+            
+        } */
+
+       /* sibling  ~ or + */
+       /* .sibling + p{
+        background-color: aqua;
+       } */
+
+    </style>
+    <title>Css Selector</title>
+</head>
+
+<body>
+     <div>Welcome to live class</div>
+   <span>Span is just a span, nothing more</span>
+    <p>We all know paragraph</p>
+    <ul>
+        <li class="bg-black text-white">item1</li>
+        <li class="danger">item2</li>
+        <li id="unique">item3</li>
+        <li class="bg-color text-white">item4</li>
+        <li class="bg-color">item5</li>
+        <li class="bg-color text-white">item6</li>
+    </ul>
+
+    <div>
+        <p>lorem</p>
+        <li>awesome</li>
+        <ul>
+            <li>highlight me <a href="#">test</a></li>
+            <li>highlight me</li>
+        </ul>
+        <p>Lorem, ipsum.</p>
+    </div>
+
+    <section>
+        <p class="sibling">Test 1</p>
+       
+        <p>Test 2</p>
+        <p>Test 3</p>
+        <p>Test 4</p>
+        <p>Test 5</p>
+    </section>
+
+</body>
+
+</html>

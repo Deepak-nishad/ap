@@ -1,0 +1,26 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.navbar-container{
+    display: flex;
+}
+
+.navbar-container img{
+ padding-left: 35px;   
+}
+
+.navbar-container ul {
+    display: flex;
+    align-items: center;
+
+}
+
+.navbar-container ul li {
+    margin-top: 25px;
+    list-style: none;
+    margin-right: 25%;
+    
+}

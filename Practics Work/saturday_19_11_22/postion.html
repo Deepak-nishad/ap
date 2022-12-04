@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML and css</title>
+    <style>
+        .container {
+            height: 1500px;
+            border: 2px solid black;
+        }
+
+        .pos {
+            border: 1px solid black;
+            display: inline-block;
+            height: 70px;
+            width: 70px;
+            text-align: center;
+            border-radius: 7px;
+        }
+
+        #one {
+            background-color: blue;
+        }
+
+        #two {
+            background-color: rgb(183, 218, 31);
+        }
+
+        #three {
+            background-color: rgb(29, 235, 173);
+        }
+
+        #four {
+            background-color: rgb(194, 59, 59);
+        }
+        /* realtive  -> any change in relative postion to its normal psotion */
+        /* #three{
+            position: relative;
+            top: 34px;
+            left: 34px; 
+        } */
+        /* absolute  -> any change in relative postion to its first parent */
+        /* #three{
+            position: absolute;
+            top: 34px;
+            left: 34px; 
+        } */
+
+          /*  sticky -> if we want something is stick to its nomal postion 
+                       It is a hybrid of relative and fixed position    
+          */
+        #three{
+            position: sticky;
+            /* right: 13px; */
+        }
+
+         /* if we want  something is fixed at the particuler postion */
+        /* #three {
+            position: fixed;
+            right: 12px;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="pos" id="one">One</div>
+        <div class="pos" id="two">Two</div>
+        <div class="pos" id="three">chat with us</div>
+        <div class="pos" id="four">Four</div>
+    </div>
+</body>
+
+</html>
