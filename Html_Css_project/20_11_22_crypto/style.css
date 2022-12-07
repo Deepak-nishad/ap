@@ -3,30 +3,28 @@
     padding: 0px;
     box-sizing: border-box ;
 }
-.container {
+/* .container {
     height: 100vh;
     width: 100vw;
-  }
-  .navbar{
+  } */
+  /* .navbar{
     padding: 30px;
     display: flex;
     justify-content: space-between;
   }
-  
-.line{
+   */
+/* .line{
     background-color: black;
     top: 0px;
-}
-.grow-list {
+} */
+/* .grow-list {
     padding-top: 10px;
-  }
-  .list {
-    /* color: white;
-    background-color: black; */
+  } */
+  /* .list {
     display: flex;
     justify-content: center;
     list-style: none;
     text-decoration: none;
     padding: 0 20px;
-  }
+  } */
   

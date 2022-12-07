@@ -6,21 +6,26 @@
 
 .navbar-container{
     display: flex;
+    padding-top: 25px;
+    padding-left: 25px;
 }
 
 .navbar-container img{
  padding-left: 35px;   
 }
 
-.navbar-container ul {
+.navbar-container list list-item{
     display: flex;
-    align-items: center;
+    /* justify-content: center; */
+    list-style: none;
+    justify-content: space-between;
+    /* align-items: center; */
 
 }
-
-.navbar-container ul li {
+ 
+/* .navbar-container ul li {
     margin-top: 25px;
     list-style: none;
     margin-right: 25%;
     
-}
+}  */
