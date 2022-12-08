@@ -1,3 +1,3 @@
 # Output of the project
-![Output](./Output.png)
+![Output](./output.png)
 
