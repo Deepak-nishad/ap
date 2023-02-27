@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from 'react'
+import Card from './card'
+import axios from 'axios';
 function App() {
+
+  const [ details, setdetails] =useState({})
+   
+  const fetchDetails = async () =>{
+    const {data}= await axios.get('https://randomuser.me/api/')
+    console.log("Respose", data);
+
+    const details = data.results[0]
+    setdetails(details)
+  }
+
+  let list =["Akku ","Deepak","Vishal"]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <div>App</div>
+    <Card myname="Deepak"  list={list} details={details}/>
+
+  <button onClick={fetchDetails}>Get dateils</button>
+
+    </>
+  )
 }
 
-export default App;
+
+export default App
