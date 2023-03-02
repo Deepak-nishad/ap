@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Card from './card'
 import axios from 'axios';
 function App() {
@@ -13,6 +13,10 @@ function App() {
     setdetails(details)
   }
 
+useEffect(()=> {
+  fetchDetails();
+}, [])
+
   let list =["Akku ","Deepak","Vishal"]
   return (
     <>
@@ -24,6 +28,5 @@ function App() {
     </>
   )
 }
-
 
 export default App
