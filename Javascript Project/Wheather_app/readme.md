@@ -1,3 +1,3 @@
 
 # Output Of the Project 
-[Click Here to see Output](./output.png)
+![Click Here to see Output](./output.png)
