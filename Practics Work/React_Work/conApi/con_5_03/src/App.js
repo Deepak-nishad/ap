@@ -1,6 +1,9 @@
-import { Navbar } from "./Components/Navbar";
-import HeroSection from "./Components/HeroSection";
 import React, { useState, createContext } from "react";
+import HeroSection from "./Components/HeroSection";
+import Navbar from "./Components/Navbar";
+
+
+export const MyContext = createContext();
 
 function App() {
   const [name, setName] = useState("");
@@ -13,8 +16,10 @@ function App() {
   const mycolor = (event) => {
     setColor(event.target.value);
   };
+  
   return (
-    <>
+<MyContext.Provider value={{name, color}}>
+
       <Navbar />
       <form>
         <input
@@ -33,9 +38,7 @@ function App() {
       </form>
 
       <HeroSection />
-    </>
-
-  
+    </MyContext.Provider>  
   );
 }
 
