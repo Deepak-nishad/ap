@@ -61,25 +61,58 @@
 
 //reduce 
 
-// const num1= [1,2,3,4,5,6,7];
-// const sum1= num1.reduce((acc,curr)=>{
-// return acc+curr+1;
-// })
-// console.log( sum1);
+const num1= [1,2,3,4,5,6,7];
+const sum1= num1.reduce((acc,curr)=>{
+    // console.log(acc,curr);
+    return acc+curr+1;
+})
+console.log( sum1);
 
 
 // const num= [1,2,3,4,5,6,7];
-// const sum= num.reduce((acc,curr)=>acc+curr, 1)
+// const sum= num.reduce((acc,curr)=> acc+curr, 1)
 
 
-// console.log( sum);
+//  console.log( sum);
 
 //sort
 
-const names =["Amit","sumit","Aman","Deepak"];
-console.log(names.sort());
-console.log(names.reverse());
+// const names =["Amit","sumit","Aman","Deepak"];
+// console.log(names.sort());
+// console.log(names.reverse());
 
 // Destructuring  spread and rest
+
+
+// spread
+// function someone(x,y)
+// {
+//      return x + y;
+// }
+
+// let vari = [9, 7];
+// console.log(vari);
+
+// console.log(someone(...vari));
+
+// rest
+
+// function sum(... args){
+//     console.log(args); // rest making the array
+//     let sum=0;
+//     for(const x of args){
+//         sum=sum+x;
+//     }
+// return sum;
+// }
+
+// console.log(sum(1,2,3,5,6,48,9,10)); 
+
+
+
+
+
+
+
 
 
