@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
 
-const express= require("express")
-const app=express();
+const uri="mongodb://127.0.0.1:27017/inote"
 
-mongoose.connect('mongodb://127.0.0.1:27017/test');
-
-const port= 8000;
-app.listen(port , ()=>{
-    console.log(`app is running at ${port}`);
-})
-+
+async function connect() {
+    await mongoose.connect(uri)
+    .then(() => {
+      console.log(`Database Connected`);
+    })
+    .catch(() => {
+      console.log(`Database Error: No Connection`);
+    });
+}
+module.exports=connect;
