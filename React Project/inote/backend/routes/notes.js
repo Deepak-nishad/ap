@@ -62,5 +62,7 @@ router.post('/addnote', fetchuser, [
         res.json({note});
         
         })
-        
+
+
+    // Route 4:- deleting an existing note : delete "/api/note/deletenote"  
 module.exports = router
