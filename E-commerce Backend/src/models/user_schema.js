@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema(
        forgetPasswordToken: String,
        forgetPasswordexpiry: Date
     },
-{}
+{timestamps: true}
 )
 
 export default mongoose.model("User", userSchema)
