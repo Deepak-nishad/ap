@@ -1,7 +1,10 @@
 import mongoose from "mongoose";
 import AuthRole from "../utils/authRoles.js";
-
 import bcrypt from "bcryptjs"
+import  Jwt  from "jsonwebtoken";
+import config from "../config/index.js";
+import crypto from "crypto"
+
 const userSchema = new mongoose.Schema(
     {
     
@@ -43,7 +46,30 @@ userSchema.method = {
   //compare password
   comparePassword: async function(enteredPassword){
     return await bcrypt.compare(enteredPassword, this.password)
-  }
+  },
+// genterate the token
+
+getJwttoken: function(){
+   Jwt.sign({_id: this._id}, config.JWT_SECRET,{
+    expiresIn: config.JWT_EXPIRY
+   })
+},
+
+// genterate forget password token
+
+generateForgetPasswordToken: function (){
+
+  const forgotToken= crypto.createHash("sha256").update(forgotToken).digest("hex")
+
+   // time for token to expire
+
+   this.forgetPasswordexpiry = Date.now() + 20 * 60 * 1000
+
+   return forgotToken
+
 }
+
+}
+
 export default mongoose.model("User", userSchema)
 
