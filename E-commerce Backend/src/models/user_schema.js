@@ -64,9 +64,7 @@ generateForgetPasswordToken: function (){
    // time for token to expire
 
    this.forgetPasswordexpiry = Date.now() + 20 * 60 * 1000
-
    return forgotToken
-
 }
 
 }
