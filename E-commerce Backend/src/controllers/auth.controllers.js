@@ -3,6 +3,13 @@ import asyncHandler from "../service/asyncHandler";
 import CustomError from "../utils/customError";
 
 
+/******************************************************
+ * @SIGNUP
+ * @route http://localhost:5000/api/auth/signup
+ * @description User signUp Controller for creating new user
+ * @returns User Object
+ ******************************************************/
+
 export const cookieOption ={
     expires: new Date(Date.now() + 3*24*60*60*1000),
     httpOnly: true
@@ -51,5 +58,47 @@ export const signUp= asyncHandler(async(req, res) => {
     })
 
 
+
+})
+
+//  for login
+export const login= asyncHandler(async(req, res) => {
+const {email, password}= req.body
+
+// validation
+if(!email || !password){
+    throw new CustomError("Please fill all the details, 400")
+}
+
+const user = User.findOne({email}).select("+password")
+
+if(!user){
+    throw new CustomError("Invalid credential" , 400)
+}
+
+const isPasswordMatched = await user.comparePassword(password)
+
+if(isPasswordMatched){
+    const token = user.getJwttoken()
+    user.password = undefined
+    res.cookie("token",token,cookieOption)
+    return res.status(200).json({
+        success:true,
+        token,
+        user
+    })
+}
+})
+
+// logout
+export const logout= asyncHandler(async (req, res) => {
+    res.cookie("token", null, {
+        expires: new Date(Date.now()),
+        httpOnly: true
+    })
+    res.status(200).json({
+        success: true,
+        message: 'logged Out'
+    })
 
 })
