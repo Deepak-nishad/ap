@@ -2,8 +2,13 @@ import User from "../models/user_schema";
 import asyncHandler from "../service/asyncHandler";
 import CustomError from "../utils/customError";
 
-// signup user
 
+export const cookieOption ={
+    expires: new Date(Date.now() + 3*24*60*60*1000),
+    httpOnly: true
+}
+
+// signup user
 export const signUp= asyncHandler(async(req, res) => {
     //get data from user
     const {name, email, password} = req.body
@@ -37,7 +42,7 @@ export const signUp= asyncHandler(async(req, res) => {
 
     // store this token in user's account
        
-    res.cookie("token", token)
+    res.cookie("token", token, cookieOption)
     // send back a response to user
     res.status(200).json({
         success: true,
