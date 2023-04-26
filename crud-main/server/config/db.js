@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
+// import mongoose from "mongoose";
 
 // const connectToDB = async () => {
 //   mongoose
-//     .connect(process.env.MONGO_URI)
+//     .connect(process.env.MONGO_URI || "mongodb://127.0.0.1:27017/CrudApp")
 //     .then((conn) => {
-//       console.log(`Connecte DB: ${conn.connection.host}`);
+//       console.log(`Connected DB: ${conn.connection.host}`);
 //     })
 //     .catch((err) => {
 //       console.log(err.message);
@@ -14,13 +15,8 @@ const mongoose = require("mongoose");
 
 // module.exports = connectToDB;
 
-// import mongoose from "mongoose";
-
-const uri = "mongodb://127.0.0.1:27017/CrudApp";
-
-
-async function connect() {
-    await mongoose.connect(uri)
+async function connectToDB() {
+    await mongoose.connect(process.env.MONGO_URI)
     .then(() => {
       console.log(`Database Connected`);
     })
@@ -29,5 +25,4 @@ async function connect() {
     });
 }
 
-module.exports = connect;
-
+module.exports = connectToDB;

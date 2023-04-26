@@ -1,3 +1,4 @@
+// use higher order function
 
 
 const asyncHandler = (fn) => async (req, res, next) => {

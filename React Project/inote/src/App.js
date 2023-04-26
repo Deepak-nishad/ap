@@ -11,6 +11,7 @@ import About from './components/About';
 function App() {
   return (
     <>
+    <noteState>
       <Router>
         <Navbar /> 
         <Switch>
@@ -22,6 +23,7 @@ function App() {
           </Route> 
         </Switch>
       </Router>
+      </noteState>
     </>
   );
 }
