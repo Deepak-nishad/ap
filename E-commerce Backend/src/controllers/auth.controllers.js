@@ -103,6 +103,7 @@ export const logout= asyncHandler(async (req, res) => {
 
 })
 
+// get profile
 export const getProfile = asyncHandler(async (req, res) => {
     const {user} = req.body
 
