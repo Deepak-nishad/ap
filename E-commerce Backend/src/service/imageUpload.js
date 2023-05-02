@@ -19,4 +19,3 @@ export const s3delteFile = async ({bucketName, key}) => {
     }).promise()
     
     }
-    
