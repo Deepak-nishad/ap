@@ -7,7 +7,8 @@ function App() {
 
   // function tha add task
   let addList = (inputText) => {
-    if (inputText !== "") setListTodo([...listTodo, inputText]);
+    // if (inputText !== "") 
+    setListTodo([...listTodo, inputText]);
   };
 
   // function that remove todo

@@ -1,0 +1,18 @@
+.choices {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.choices button {
+    margin: 0 20px;
+    background-color: rgb(5, 4, 4);
+    color: aliceblue;
+}
+
+.result {
+    margin-top: 100px;
+    text-align: center;
+    background-color: blanchedalmond;
+
+}
