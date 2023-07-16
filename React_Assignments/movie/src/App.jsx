@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getApiConfiguration } from "./store/homeSlice";
-import Header from "./components/header/header";
+import Header from "./components/header/header"
 import Footer from "./components/footer/Footer"
 import Home from "./pages/home/Home"
 import Details from "./pages/details/Details";
@@ -23,13 +23,19 @@ function App() {
 
 
   useEffect(() => {
-    apiTesting();
+    fetchApiConfig();
   }, []);
 
-  const apiTesting = () => {
-    fetchDataFromApi("/movie/popular").then((res) => {
-      dispatch(getApiConfiguration(res));
-    })
+  const fetchApiConfig = () => {
+    fetchDataFromApi("/configuration").then((res) => {
+      console.log(res);
+      const url = {
+        backdrop: res.images.secure_base_url + "original",
+        poster: res.images.secure_base_url + "original",
+        profile: res.images.secure_base_url + "original",
+      }
+      dispatch(getApiConfiguration(url));
+    });
   }
 
 
@@ -39,7 +45,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:mediaType/:id" element={<Details />} />
-        <Route path="/:search/:query" element={<SearchResult />} />
+        <Route path="/search/:query" element={<SearchResult />} />
         <Route path="/:explore/:mediaType" element={<Explore />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
