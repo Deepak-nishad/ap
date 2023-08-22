@@ -12,17 +12,59 @@ let parent_element = document.getElementsByClassName("nav-center")[0];
 parent_element.appendChild(div);
 
 // ------------------------------------------------------------------------------------------------------------
+// Create a new <a> element
+const newLink = document.createElement("a");
+newLink.href = "#";
+newLink.textContent = "Chinese (7)";
+newLink.style.marginBottom = "10px";
+newLink.style.fontSize = "24px";
+newLink.style.color = "brown";
+newLink.style.textTransform = "capitalize";
+const hreftag = document.getElementsByClassName("tags-container")[0];
+hreftag.appendChild(newLink);
 
-var parentElement = document.querySelectorAll("recipe-gallery")[1];
+// ---------------------------------------------------------------------------------------------------------------------
 
-console.log(parentElement);
+const cards = document.querySelectorAll(".recipe-gallery .card");
+cards.forEach((card) => {
+  // Target the <h5> element within the current card
+  const nameElement = card.querySelector(".recipe-name");
+  const nameElements = card.querySelector(".recipe-disp");
 
-// var firstChild = parentElement.querySelector(".card .recipe-name");
-// console.log(firstChild);
-// firstChild.style.color = "white";
+  nameElement.style.color = "#002266";
 
-// var secondChild = parentElement.querySelector(".one-third:nth-child(2)");
-// secondChild.style.color = "white";
+  nameElements.style.color = "#002266";
+});
 
-// var thirdChild = parentElement.querySelector(".one-third:nth-child(3)");
-// thirdChild.style.color = "white";
+// ---------------------------------------------------------------------------------------------------------------------
+
+const adddiv = document.createElement("div");
+adddiv.classList.add("card");
+
+const anchorElement = document.createElement("a");
+
+anchorElement.setAttribute("href", "#");
+
+anchorElement.classList.add("recipe-text");
+// Create the image element
+const imgElement = document.createElement("img");
+imgElement.setAttribute("src", "./img/6-pasta.png");
+imgElement.classList.add("recipe-img");
+
+const h5Element = document.createElement("h5");
+h5Element.classList.add("recipe-name");
+h5Element.textContent = "Hakka Noodles";
+
+var pElement = document.createElement("p");
+pElement.classList.add("recipe-disp");
+pElement.textContent = "Prep : 15min | Cook : 30min";
+
+adddiv.appendChild(anchorElement);
+adddiv.appendChild(imgElement);
+adddiv.appendChild(h5Element);
+adddiv.appendChild(pElement);
+
+const newcard = document.getElementsByClassName("recipe-gallery")[0];
+newcard.appendChild(adddiv);
+
+console.log(adddiv);
