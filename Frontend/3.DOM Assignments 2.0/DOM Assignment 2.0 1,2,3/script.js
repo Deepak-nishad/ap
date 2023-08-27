@@ -37,17 +37,17 @@
 
 // -------------------Task 5-------------------------
 
-function myFunction() {
-  var target = document.getElementsByClassName("hero-right-section-btns")[0];
+// function myFunction() {
+//   var target = document.getElementsByClassName("hero-right-section-btns")[0];
 
-  var button = document.createElement("BUTTON");
+//   var button = document.createElement("BUTTON");
 
-  // creating text to be
-  //displayed on button
-  var text = document.createTextNode("Support Me");
-  // appending text to button
-  button.appendChild(text);
+//   // creating text to be
+//   //displayed on button
+//   var text = document.createTextNode("Support Me");
+//   // appending text to button
+//   button.appendChild(text);
 
-  target.appendChild(button);
-}
-myFunction();
+//   target.appendChild(button);
+// }
+// myFunction();
