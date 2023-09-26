@@ -67,7 +67,8 @@ const Home = () => {
         <IndexPart setIndex={setIndex} />
       </div>
       <div className="copyright">
-        Made by <a href="https://sm8uti-linktree.netlify.app/">@sm8uti</a>
+        Made by{" "}
+        <a href="https://www.linkedin.com/in/deepak-kumar-07675a185/">Deepak</a>
       </div>
     </main>
   );
